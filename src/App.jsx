@@ -1,5 +1,10 @@
 function App() {
-  return <div>Hi</div>;
+  return (
+    <div>
+      <h1 className="text-right">Hellow world</h1>
+      <input type="text" />
+    </div>
+  );
 }
 
 export default App;
