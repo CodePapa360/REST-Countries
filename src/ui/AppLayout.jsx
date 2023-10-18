@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 function AppLayout() {
   return (
-    <div className="mx-auto flex min-h-screen max-w-[1440px] flex-col">
+    <div className="mx-auto flex min-h-screen flex-col">
       <Header />
 
       <main className="dark:bg-cmVeryDarkBlue">

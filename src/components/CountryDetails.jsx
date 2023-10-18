@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Button from "../ui/Button";
 
 const dummyCountry = {
   name: "Belgium",
@@ -89,18 +90,26 @@ function CountryDetails() {
   const countryDetails = dummyCountry;
 
   return (
-    <div className="dark:text-cmWhite">
-      <Link to={"/"}>&larr;Back</Link>
+    <div className="px-8 py-8 dark:text-cmWhite lg:px-16 lg:py-16">
+      <Button to="/">
+        <span className="text-xl">&larr;</span> Back
+      </Button>
 
-      <div>
-        <div>
-          <img src={countryDetails.flags.svg} alt="" />
+      <div className="mx-auto flex max-w-xl flex-col justify-center gap-8 py-12 lg:max-w-[1440px] lg:flex-row lg:items-center lg:gap-32">
+        <div className="lg:max-w-md xl:max-w-xl">
+          <img
+            className="h-auto w-full"
+            src={countryDetails.flags.svg}
+            alt={countryDetails.name}
+          />
         </div>
 
         <div>
-          <div>
+          <div className="mb-8 flex flex-col gap-8 leading-loose lg:flex-row lg:items-center">
             <div>
-              <h2>{countryDetails.name}</h2>
+              <h2 className="mb-4 text-2xl font-[800] lg:text-3xl">
+                {countryDetails.name}
+              </h2>
               <p>
                 <span className="font-[600]">Native Name:</span>{" "}
                 {countryDetails.nativeName}
@@ -139,16 +148,18 @@ function CountryDetails() {
             </div>
           </div>
 
-          <div>
-            <h2>Border Countries:</h2>
-            <div>
+          <div className="flex flex-col gap-4 md:flex-row">
+            <h2 className="whitespace-nowrap text-lg font-[600]">
+              Border Countries:
+            </h2>
+            <ul className="flex flex-wrap gap-4">
               {/* Temporary */}
               {countryDetails.borders.map((br) => (
-                <Link to={`/country/${br}`} key={br}>
-                  {br}
-                </Link>
+                <li key={br}>
+                  <Button to={`/country/${br}`}>{br}</Button>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </div>
