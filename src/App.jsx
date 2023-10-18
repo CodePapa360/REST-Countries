@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home, { loader as countriesLoader } from "./components/Home";
+import Home from "./components/Home";
 import CountryDetails from "./components/CountryDetails";
 import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: countriesLoader,
+        // loader: countriesLoader,
         errorElement: <Error />,
       },
       {

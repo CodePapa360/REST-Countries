@@ -9,7 +9,7 @@ function AppLayout() {
 
   return (
     <div className="mx-auto flex min-h-screen flex-col">
-      {isLoading && <Loader />}
+      {/* {isLoading && <Loader />} */}
 
       <Header />
 
