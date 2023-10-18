@@ -1,4 +1,4 @@
-import Header from "../ui/Header";
+import Header from "../components/Header";
 import Attribution from "../components/Attribution";
 import { Outlet, useNavigation } from "react-router-dom";
 import Loader from "../ui/Loader";
