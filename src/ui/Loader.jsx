@@ -4,7 +4,7 @@ function Loader() {
   //   "absolute inset-0 flex items-center justify-center bg-slate-200/20 backdrop-blur-sm";
 
   const className =
-    "absolute inset-0 flex items-center justify-center bg-stone-800/30 ";
+    "absolute inset-0 flex items-center justify-center bg-slate-950/50 ";
 
   return (
     <div className={className}>
