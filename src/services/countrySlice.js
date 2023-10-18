@@ -1,15 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getCountries } from "./apiStore";
 
-async function initCountries() {
-  const countries = await getCountries();
-  return countries;
-}
+export const fetchCountries = createAsyncThunk(
+  "country/fetchCountries",
+  async function () {
+    const countries = await getCountries();
+    return countries;
+  },
+);
 
 const initialState = {
-  countries: await initCountries(),
+  countries: [],
   filter: "",
   query: "",
+  status: "idle",
+  error: "",
 };
 
 const countrySlice = createSlice({
@@ -23,6 +28,19 @@ const countrySlice = createSlice({
       state.query = action.payload;
     },
   },
+  extraReducers: (builder) =>
+    builder
+      .addCase(fetchCountries.pending, (state, action) => {
+        state.status = "loading";
+      })
+      .addCase(fetchCountries.fulfilled, (state, action) => {
+        state.countries = action.payload;
+        state.status = "idle";
+      })
+      .addCase(fetchCountries.rejected, (state, action) => {
+        state.status = "error";
+        state.error = action.error.message;
+      }),
 });
 
 export const getFilteredCountries = (state) => {
@@ -81,7 +99,12 @@ export const getFilteredCountries = (state) => {
         return false;
       });
     default:
-      return countries;
+      return countries.filter((country) => {
+        if (!query) return true;
+        if (country.name.toLowerCase().includes(query.toLowerCase()))
+          return true;
+        return false;
+      });
   }
 };
 
