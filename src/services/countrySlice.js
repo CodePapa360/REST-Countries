@@ -9,7 +9,7 @@ async function initCountries() {
 const initialState = {
   countries: await initCountries(),
   filter: "",
-  query: "All",
+  query: "",
 };
 
 const countrySlice = createSlice({
@@ -18,6 +18,9 @@ const countrySlice = createSlice({
   reducers: {
     filterRegion(state, action) {
       state.filter = action.payload;
+    },
+    updateQuery(state, action) {
+      state.query = action.payload;
     },
   },
 });
