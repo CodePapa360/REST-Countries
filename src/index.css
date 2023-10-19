@@ -12,7 +12,7 @@
       var(--c) 50% 50%,
       var(--c) 100% 50%;
     background-size: 20% 50%;
-    animation: loading 0.2s infinite linear;
+    animation: loading 0.5s infinite linear;
   }
 
   @keyframes loading {

@@ -1,16 +1,17 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateQuery } from "../services/countrySlice";
 
 function Search() {
-  const [query, setQuery] = useState("");
+  // const [query, setQuery] = useState("");
+  const query = useSelector((state) => state.country.query);
   const dispatch = useDispatch();
 
   function handleQuery(e) {
     const value = e.target.value;
 
     dispatch(updateQuery(value));
-    setQuery(value);
+    // setQuery(value);
   }
 
   return (

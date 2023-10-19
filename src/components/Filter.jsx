@@ -1,16 +1,17 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { filterRegion } from "../services/countrySlice";
 
 function Filter() {
-  const [filter, setFilter] = useState("");
+  // const [filter, setFilter] = useState("");
+  const filter = useSelector((state) => state.country.filter);
   const dispatch = useDispatch();
 
   function handleFilter(e) {
     const value = e.target.value;
 
     dispatch(filterRegion(value));
-    setFilter(value);
+    // setFilter(value);
   }
 
   return (

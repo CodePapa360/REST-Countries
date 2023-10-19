@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Button from "../ui/Button";
+import { useSelector } from "react-redux";
 
 const dummyCountry = {
   name: "Belgium",
@@ -86,8 +87,13 @@ const dummyCountry = {
 };
 
 function CountryDetails() {
-  //   const { countryId } = useParams();
-  const countryDetails = dummyCountry;
+  const country = useSelector((state) => state.country.countries);
+  const { countryId } = useParams();
+  // console.log(country, countryId);
+
+  const countryDetails = country.find((coun) => coun.alpha3Code === countryId);
+  // console.log(countryDetails);
+  // const countryDetails = dummyCountry;
 
   return (
     <div className="px-8 py-8 dark:text-cmWhite lg:px-16 lg:py-16">
@@ -137,10 +143,12 @@ function CountryDetails() {
                 <span className="font-[600]">Top Level Domain:</span>{" "}
                 {countryDetails.topLevelDomain}
               </p>
-              <p>
-                <span className="font-[600]">Currencies:</span>{" "}
-                {countryDetails.currencies[0].code}
-              </p>
+              {countryDetails.currencies && (
+                <p>
+                  <span className="font-[600]">Currencies:</span>{" "}
+                  {countryDetails.currencies[0].code}
+                </p>
+              )}
               <p>
                 <span className="font-[600]">Languages:</span>{" "}
                 {countryDetails.languages.map((lng) => lng.name).join(", ")}
@@ -148,19 +156,21 @@ function CountryDetails() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 md:flex-row">
-            <h2 className="whitespace-nowrap text-lg font-[600]">
-              Border Countries:
-            </h2>
-            <ul className="flex flex-wrap gap-4">
-              {/* Temporary */}
-              {countryDetails.borders.map((br) => (
-                <li key={br}>
-                  <Button to={`/country/${br}`}>{br}</Button>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {countryDetails.borders && (
+            <div className="flex flex-col gap-4 md:flex-row">
+              <h2 className="whitespace-nowrap text-lg font-[600]">
+                Border Countries:
+              </h2>
+              <ul className="flex flex-wrap gap-4">
+                {/* Temporary */}
+                {countryDetails.borders.map((br) => (
+                  <li key={br}>
+                    <Button to={`/country/${br}`}>{br}</Button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -19,6 +19,7 @@ function Home() {
 
   // console.log(state);
   // const countries = [];
+  // const countries = getFilteredCountries(state).slice(0, 10);
   const countries = getFilteredCountries(state);
 
   return (
