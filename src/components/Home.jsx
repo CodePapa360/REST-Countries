@@ -30,13 +30,13 @@ function Home() {
 
   return (
     <>
-      <div className="flex flex-col justify-between gap-8 p-10 md:flex-row lg:mx-auto lg:max-w-[1440px]">
+      <div className="flex flex-col justify-between gap-4 p-4 md:flex-row md:p-8 lg:mx-auto lg:max-w-[1440px]">
         <Search />
         <Filter />
       </div>
 
       {countries.length ? (
-        <ul className="grid grid-cols-[repeat(auto-fill,_minmax(18rem,_auto))] items-center justify-center gap-8 p-4 md:gap-16 lg:mx-auto lg:max-w-[1440px]">
+        <ul className="grid grid-cols-[repeat(auto-fill,_minmax(auto,_18rem))] items-center justify-center gap-8 p-4 md:gap-16 lg:mx-auto lg:max-w-[1440px]">
           {countries.map((country) => (
             <Country country={country} key={country.name} />
           ))}
@@ -50,11 +50,11 @@ function Home() {
       {end < allCountries.length && (
         <button
           onClick={handleLoadMore}
-          className="mx-auto my-4 block rounded-md px-4 py-2 text-xl dark:bg-cmDarkBlue dark:text-cmWhite"
+          className="mx-auto my-4 flex items-center justify-center gap-2 rounded-md px-4 py-2 shadow-[0_0_15px_#00000033] transition-transform hover:scale-110 dark:bg-cmDarkBlue dark:text-cmWhite"
         >
-          Load More{" "}
-          <span className="rounded-md bg-slate-500/50 p-1 text-sm italic">
-            ({allCountries.length - end}+)
+          <span>Load More</span>
+          <span className=" inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-500/20 text-xs dark:bg-slate-500/20">
+            {allCountries.length - end}+
           </span>
         </button>
       )}

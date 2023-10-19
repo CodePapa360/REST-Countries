@@ -12,7 +12,7 @@ function AppLayout() {
 
       <Header />
 
-      <main className="grow dark:bg-cmVeryDarkBlue">
+      <main className="grow bg-cmVeryLightGray pb-4 dark:bg-cmVeryDarkBlue">
         <Outlet />
       </main>
 

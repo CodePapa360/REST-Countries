@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer components {
+  .testClass {
+    /* box-shadow: 0 0 15px #00000033; */
+    /* color: ; */
+  }
+
   .lazyLoadHomeFlags {
     height: 100%;
     width: 100%;

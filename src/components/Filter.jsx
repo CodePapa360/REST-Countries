@@ -15,7 +15,7 @@ function Filter() {
 
   return (
     <select
-      className="w-52 cursor-pointer rounded-md p-4 dark:bg-cmDarkBlue dark:text-cmWhite"
+      className="focus:outline-3 w-52 cursor-pointer rounded-md bg-cmWhite p-4 text-cmVeryVeryDarkBlue shadow-[0_0_15px_#00000033] focus:outline-dotted focus:outline-offset-2 dark:bg-cmDarkBlue dark:text-cmWhite"
       value={filter}
       onChange={handleFilter}
     >

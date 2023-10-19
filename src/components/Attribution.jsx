@@ -1,23 +1,23 @@
 function Attribution() {
   return (
-    <footer className="mt-auto text-center">
-      <div className="p-4 dark:bg-cmDarkBlue dark:text-cmWhite">
+    <footer className="mt-auto text-center shadow-[0_0_15px_#00000033]">
+      <div className="px-4 py-6 dark:bg-cmDarkBlue dark:text-cmWhite">
         <p>
           <span>
             Coded by
             <a
-              className="mx-1 text-blue-200"
+              className="mx-1 text-blue-700 dark:text-blue-200"
               href="https://twitter.com/CodePapa360"
               target="_blank"
               rel="noreferrer"
             >
-              Alamin
+              Alamin,
             </a>
           </span>
           <span>
             Challenge by
             <a
-              className="mx-1 text-blue-200"
+              className="mx-1 text-blue-700 dark:text-blue-200"
               href="https://www.frontendmentor.io/profile/CodePapa360"
               target="_blank"
               rel="noreferrer"

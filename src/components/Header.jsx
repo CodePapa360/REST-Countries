@@ -15,12 +15,15 @@ function Header() {
   }
 
   return (
-    <header className="flex items-center justify-between bg-white px-4 py-8 dark:bg-cmDarkBlue dark:text-cmWhite">
-      <Link to={"/"} className="font-[600]">
+    <header className="flex items-center justify-between bg-cmWhite px-4 py-8 text-cmVeryVeryDarkBlue shadow-lg dark:bg-cmDarkBlue dark:text-cmWhite">
+      <Link to={"/"} className="font-[800]   md:text-2xl">
         Where in the world?
       </Link>
 
-      <button onClick={handleDarkToggle} className="flex items-center gap-2">
+      <button
+        onClick={handleDarkToggle}
+        className="flex items-center gap-2  md:text-lg"
+      >
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +39,7 @@ function Header() {
           </svg>
         </span>
 
-        <span>Dark Mode</span>
+        <span className="font-[600]">Dark Mode</span>
       </button>
     </header>
   );
