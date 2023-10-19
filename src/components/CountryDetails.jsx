@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom";
 import Button from "../ui/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchCountries } from "../services/countrySlice";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function CountryDetails() {
   scrollTo(0, 0);
@@ -37,7 +39,11 @@ function CountryDetails() {
 
       <div className="mx-auto grid grid-cols-1 gap-8 py-12 md:max-w-[1440px] md:grid-cols-2 ">
         <div className="md:max-w-lg">
-          <img src={countryDetails.flags.svg} alt={countryDetails.name} />
+          <LazyLoadImage
+            src={countryDetails.flag}
+            alt={countryDetails.name}
+            effect="blur"
+          />
         </div>
 
         <div>

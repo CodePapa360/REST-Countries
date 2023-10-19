@@ -1,3 +1,6 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 import { Link } from "react-router-dom";
 
 function Country({ country }) {
@@ -5,13 +8,14 @@ function Country({ country }) {
     <li>
       <Link
         to={`/country/${country.alpha3Code}`}
-        className="inline-block w-full max-w-[18rem] overflow-hidden rounded-md dark:bg-cmDarkBlue dark:text-cmWhite"
+        className="inline-block w-full max-w-[18rem] overflow-hidden rounded-md transition-transform hover:scale-105 dark:bg-cmDarkBlue dark:text-cmWhite"
       >
         <div className="h-40 w-full">
-          <img
+          <LazyLoadImage
             className="h-full w-full object-cover"
+            alt={country.name}
+            effect="blur"
             src={country.flags.svg}
-            alt=""
           />
         </div>
 
