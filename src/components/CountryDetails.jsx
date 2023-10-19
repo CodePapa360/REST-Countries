@@ -1,90 +1,6 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Button from "../ui/Button";
 import { useSelector } from "react-redux";
-
-const dummyCountry = {
-  name: "Belgium",
-  topLevelDomain: [".be"],
-  alpha2Code: "BE",
-  alpha3Code: "BEL",
-  callingCodes: ["32"],
-  capital: "Brussels",
-  altSpellings: [
-    "BE",
-    "België",
-    "Belgie",
-    "Belgien",
-    "Belgique",
-    "Kingdom of Belgium",
-    "Koninkrijk België",
-    "Royaume de Belgique",
-    "Königreich Belgien",
-  ],
-  subregion: "Western Europe",
-  region: "Europe",
-  population: 11555997,
-  latlng: [50.83333333, 4],
-  demonym: "Belgian",
-  area: 30528,
-  gini: 27.2,
-  timezones: ["UTC+01:00"],
-  borders: ["FRA", "DEU", "LUX", "NLD"],
-  nativeName: "België",
-  numericCode: "056",
-  flags: {
-    svg: "https://flagcdn.com/be.svg",
-    png: "https://flagcdn.com/w320/be.png",
-  },
-  currencies: [
-    {
-      code: "EUR",
-      name: "Euro",
-      symbol: "€",
-    },
-  ],
-  languages: [
-    {
-      iso639_1: "nl",
-      iso639_2: "nld",
-      name: "Dutch",
-      nativeName: "Nederlands",
-    },
-    {
-      iso639_1: "fr",
-      iso639_2: "fra",
-      name: "French",
-      nativeName: "français",
-    },
-    {
-      iso639_1: "de",
-      iso639_2: "deu",
-      name: "German",
-      nativeName: "Deutsch",
-    },
-  ],
-  translations: {
-    br: "Belgia",
-    pt: "Bélgica",
-    nl: "België",
-    hr: "Belgija",
-    fa: "بلژیک",
-    de: "Belgien",
-    es: "Bélgica",
-    fr: "Belgique",
-    ja: "ベルギー",
-    it: "Belgio",
-    hu: "Belgium",
-  },
-  flag: "https://flagcdn.com/be.svg",
-  regionalBlocs: [
-    {
-      acronym: "EU",
-      name: "European Union",
-    },
-  ],
-  cioc: "BEL",
-  independent: true,
-};
 
 function CountryDetails() {
   const country = useSelector((state) => state.country.countries);
@@ -101,17 +17,13 @@ function CountryDetails() {
         <span className="text-xl">&larr;</span> Back
       </Button>
 
-      <div className="mx-auto flex max-w-xl flex-col justify-center gap-8 py-12 lg:max-w-[1440px] lg:flex-row lg:items-center lg:gap-32">
-        <div className="lg:max-w-md xl:max-w-xl">
-          <img
-            className="h-auto w-full"
-            src={countryDetails.flags.svg}
-            alt={countryDetails.name}
-          />
+      <div className="mx-auto grid grid-cols-1 gap-8 py-12 md:max-w-[1440px] md:grid-cols-2 ">
+        <div className="md:max-w-lg">
+          <img src={countryDetails.flags.svg} alt={countryDetails.name} />
         </div>
 
         <div>
-          <div className="mb-8 flex flex-col gap-8 leading-loose lg:flex-row lg:items-center">
+          <div className="mb-8 flex flex-col gap-8 leading-loose md:flex-row md:items-center">
             <div>
               <h2 className="mb-4 text-2xl font-[800] lg:text-3xl">
                 {countryDetails.name}
@@ -157,7 +69,7 @@ function CountryDetails() {
           </div>
 
           {countryDetails.borders && (
-            <div className="flex flex-col gap-4 md:flex-row">
+            <div className="flex flex-col gap-4 lg:flex-row">
               <h2 className="whitespace-nowrap text-lg font-[600]">
                 Border Countries:
               </h2>
