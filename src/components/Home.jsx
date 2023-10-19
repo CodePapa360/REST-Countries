@@ -1,24 +1,23 @@
 import Country from "./Country";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCountries, getFilteredCountries } from "../services/countrySlice";
+import { useSelector } from "react-redux";
+import { getFilteredCountries } from "../services/countrySlice";
 import Search from "./Search";
 import Filter from "./Filter";
-import { useEffect } from "react";
+import { useState } from "react";
 
 function Home() {
-  const dispatch = useDispatch();
-
-  useEffect(
-    function () {
-      dispatch(fetchCountries());
-    },
-    [dispatch],
-  );
-
   const state = useSelector((state) => state.country);
+  const allCountries = getFilteredCountries(state);
+  const [end, setEnd] = useState(10);
 
-  // const countries = getFilteredCountries(state).slice(0, 10);
-  const countries = getFilteredCountries(state);
+  const countries = allCountries.slice(0, end);
+
+  function handleLoadMore() {
+    let newEnd = end + 10;
+    if (newEnd > allCountries.length) newEnd = allCountries.length;
+
+    setEnd(() => newEnd);
+  }
 
   return (
     <>
@@ -37,6 +36,18 @@ function Home() {
         <p className="text-center text-xl font-[600] dark:text-cmWhite">
           No country found!😒
         </p>
+      )}
+
+      {end < allCountries.length && (
+        <button
+          onClick={handleLoadMore}
+          className="mx-auto my-4 block rounded-md px-4 py-2 text-xl dark:bg-cmDarkBlue dark:text-cmWhite"
+        >
+          Load More{" "}
+          <span className="rounded-md bg-slate-500/50 p-1 text-sm italic">
+            ({allCountries.length - end}+)
+          </span>
+        </button>
       )}
     </>
   );

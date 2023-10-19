@@ -1,10 +1,21 @@
 import Header from "../components/Header";
 import Attribution from "../components/Attribution";
 import { Outlet } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Loader from "../ui/Loader";
+import { useEffect } from "react";
+import { fetchCountries } from "../services/countrySlice";
 
 function AppLayout() {
+  const dispatch = useDispatch();
+
+  useEffect(
+    function () {
+      dispatch(fetchCountries());
+    },
+    [dispatch],
+  );
+
   // const navigation = useNavigation();
   // const isLoading = navigation.state === "loading";
   const isLoading = useSelector((state) => state.country.status !== "idle");

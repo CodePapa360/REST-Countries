@@ -11,7 +11,7 @@ export const fetchCountries = createAsyncThunk(
 
 const initialState = {
   countries: [],
-  filter: "",
+  filter: "All",
   query: "",
   status: "idle",
   error: "",
@@ -45,67 +45,80 @@ const countrySlice = createSlice({
 
 export const getFilteredCountries = (state) => {
   const { countries, filter, query } = state;
-  switch (filter) {
-    case "Africa":
-      return countries.filter((country) => {
-        const filtered = country.region === "Africa";
-        if (!filtered) return false;
-        if (filtered && !query) return true;
-        if (country.name.toLowerCase().includes(query.toLowerCase()))
-          return true;
-        return false;
-      });
-    case "Asia":
-      return countries.filter((country) => {
-        const filtered = country.region === "Asia";
-        if (!filtered) return false;
-        if (filtered && !query) return true;
-        if (country.name.toLowerCase().includes(query.toLowerCase()))
-          return true;
-        return false;
-      });
-    case "America":
-      return countries.filter((country) => {
-        const filtered = country.region === "Americas";
-        if (!filtered) return false;
-        if (filtered && !query) return true;
-        if (country.name.toLowerCase().includes(query.toLowerCase()))
-          return true;
-        return false;
-      });
-    case "Europe":
-      return countries.filter((country) => {
-        const filtered = country.region === "Europe";
-        if (!filtered) return false;
-        if (filtered && !query) return true;
-        if (country.name.toLowerCase().includes(query.toLowerCase()))
-          return true;
-        return false;
-      });
-    case "Oceania":
-      return countries.filter((country) => {
-        const filtered = country.region === "Oceania";
-        if (!filtered) return false;
-        if (filtered && !query) return true;
-        if (country.name.toLowerCase().includes(query.toLowerCase()))
-          return true;
-        return false;
-      });
-    case "All":
-      return countries.filter((country) => {
-        if (!query) return true;
-        if (country.name.toLowerCase().includes(query.toLowerCase()))
-          return true;
-        return false;
-      });
-    default:
-      return countries.filter((country) => {
-        if (!query) return true;
-        if (country.name.toLowerCase().includes(query.toLowerCase()))
-          return true;
-        return false;
-      });
-  }
+
+  const filterFunction = (country) => {
+    if (query && !country.name.toLowerCase().includes(query.toLowerCase())) {
+      return false;
+    }
+    if (filter === "All" || country.region === filter) {
+      return true;
+    }
+    return false;
+  };
+
+  return countries.filter(filterFunction);
+
+  // switch (filter) {
+  //   case "Africa":
+  //     return countries.filter((country) => {
+  //       const filtered = country.region === "Africa";
+  //       if (!filtered) return false;
+  //       if (filtered && !query) return true;
+  //       if (country.name.toLowerCase().includes(query.toLowerCase()))
+  //         return true;
+  //       return false;
+  //     });
+  //   case "Asia":
+  //     return countries.filter((country) => {
+  //       const filtered = country.region === "Asia";
+  //       if (!filtered) return false;
+  //       if (filtered && !query) return true;
+  //       if (country.name.toLowerCase().includes(query.toLowerCase()))
+  //         return true;
+  //       return false;
+  //     });
+  //   case "America":
+  //     return countries.filter((country) => {
+  //       const filtered = country.region === "Americas";
+  //       if (!filtered) return false;
+  //       if (filtered && !query) return true;
+  //       if (country.name.toLowerCase().includes(query.toLowerCase()))
+  //         return true;
+  //       return false;
+  //     });
+  //   case "Europe":
+  //     return countries.filter((country) => {
+  //       const filtered = country.region === "Europe";
+  //       if (!filtered) return false;
+  //       if (filtered && !query) return true;
+  //       if (country.name.toLowerCase().includes(query.toLowerCase()))
+  //         return true;
+  //       return false;
+  //     });
+  //   case "Oceania":
+  //     return countries.filter((country) => {
+  //       const filtered = country.region === "Oceania";
+  //       if (!filtered) return false;
+  //       if (filtered && !query) return true;
+  //       if (country.name.toLowerCase().includes(query.toLowerCase()))
+  //         return true;
+  //       return false;
+  //     });
+  //   case "All":
+  //     return countries.filter((country) => {
+  //       if (!query) return true;
+  //       if (country.name.toLowerCase().includes(query.toLowerCase()))
+  //         return true;
+  //       return false;
+  //     });
+  //   default:
+  //     return countries.filter((country) => {
+  //       if (!query) return true;
+  //       if (country.name.toLowerCase().includes(query.toLowerCase()))
+  //         return true;
+  //       return false;
+  //     });
+  // }
 };
 
 export const { filterRegion, updateQuery } = countrySlice.actions;

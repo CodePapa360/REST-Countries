@@ -3,11 +3,13 @@ import Button from "../ui/Button";
 import { useSelector } from "react-redux";
 
 function CountryDetails() {
-  const country = useSelector((state) => state.country.countries);
+  const countries = useSelector((state) => state.country.countries);
   const { countryId } = useParams();
   // console.log(country, countryId);
 
-  const countryDetails = country.find((coun) => coun.alpha3Code === countryId);
+  const countryDetails = countries.find(
+    (coun) => coun.alpha3Code === countryId,
+  );
   // console.log(countryDetails);
   // const countryDetails = dummyCountry;
 
