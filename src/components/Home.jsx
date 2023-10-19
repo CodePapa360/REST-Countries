@@ -1,15 +1,24 @@
 import Country from "./Country";
-import { useSelector } from "react-redux";
-import { getFilteredCountries } from "../services/countrySlice";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCountries, getFilteredCountries } from "../services/countrySlice";
 import Search from "./Search";
 import Filter from "./Filter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Home() {
   const state = useSelector((state) => state.country);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // Check if the countries data is available
+    if (state.countries.length === 0) {
+      // If not, fetch the countries data
+      dispatch(fetchCountries());
+    }
+  }, [dispatch, state]);
+
   const allCountries = getFilteredCountries(state);
   const [end, setEnd] = useState(10);
-
   const countries = allCountries.slice(0, end);
 
   function handleLoadMore() {

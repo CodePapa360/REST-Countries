@@ -1,18 +1,33 @@
 import { useParams } from "react-router-dom";
 import Button from "../ui/Button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchCountries } from "../services/countrySlice";
 
 function CountryDetails() {
   scrollTo(0, 0);
-  const countries = useSelector((state) => state.country.countries);
+  const dispatch = useDispatch();
   const { countryId } = useParams();
-  // console.log(country, countryId);
+  const countries = useSelector((state) => state.country.countries);
 
+  useEffect(() => {
+    // Check if the countries data is available
+    if (countries.length === 0) {
+      // If not, fetch the countries data
+      dispatch(fetchCountries());
+    }
+  }, [dispatch, countries]);
+
+  // Find the specific country's data based on countryId
   const countryDetails = countries.find(
     (coun) => coun.alpha3Code === countryId,
   );
-  // console.log(countryDetails);
-  // const countryDetails = dummyCountry;
+
+  // Ensure that countryDetails exists before rendering
+  if (!countryDetails) {
+    // You can return a loading indicator or an error message here
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className="px-8 py-8 dark:text-cmWhite lg:px-16 lg:py-16">

@@ -7,17 +7,15 @@ import { useEffect } from "react";
 import { fetchCountries } from "../services/countrySlice";
 
 function AppLayout() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(
-    function () {
-      dispatch(fetchCountries());
-    },
-    [dispatch],
-  );
+  // useEffect(
+  //   function () {
+  //     dispatch(fetchCountries());
+  //   },
+  //   [dispatch],
+  // );
 
-  // const navigation = useNavigation();
-  // const isLoading = navigation.state === "loading";
   const isLoading = useSelector((state) => state.country.status !== "idle");
   return (
     <div className="mx-auto flex min-h-screen flex-col">
