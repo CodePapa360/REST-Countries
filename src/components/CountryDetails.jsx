@@ -101,7 +101,7 @@ function CountryDetails() {
                 {/* Temporary */}
                 {countryDetails.borders.map((br) => (
                   <li key={br}>
-                    <Button to={`/country/${br}`}>{br}</Button>
+                    <Button to={`/${br}`}>{br}</Button>
                   </li>
                 ))}
               </ul>

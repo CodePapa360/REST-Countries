@@ -7,7 +7,7 @@ function Country({ country }) {
   return (
     <li>
       <Link
-        to={`/country/${country.alpha3Code}`}
+        to={`/${country.alpha3Code}`}
         className="inline-block w-full max-w-[18rem] overflow-hidden rounded-md transition-transform hover:scale-105 dark:bg-cmDarkBlue dark:text-cmWhite"
       >
         <div className="h-40 w-full">
