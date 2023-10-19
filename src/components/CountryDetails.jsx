@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import Button from "../ui/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { fetchCountries } from "../services/countrySlice";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -101,7 +101,12 @@ function CountryDetails() {
                 {/* Temporary */}
                 {countryDetails.borders.map((br) => (
                   <li key={br}>
-                    <Button to={`/country/${br}`}>{br}</Button>
+                    <Button to={`/country/${br}`}>
+                      {
+                        countries.find((country) => country.alpha3Code === br)
+                          .name
+                      }
+                    </Button>
                   </li>
                 ))}
               </ul>
