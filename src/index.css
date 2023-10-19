@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer components {
+  .lazyLoadHomeFlags {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
   .loader {
     width: 45px;
     aspect-ratio: 0.75;

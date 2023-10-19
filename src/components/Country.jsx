@@ -12,7 +12,9 @@ function Country({ country }) {
       >
         <div className="h-40 w-full">
           <LazyLoadImage
-            className="h-full w-full object-cover"
+            height={"100%"}
+            width={"100%"}
+            className="lazyLoadHomeFlags"
             alt={country.name}
             effect="blur"
             src={country.flags.svg}

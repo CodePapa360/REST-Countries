@@ -37,7 +37,7 @@ function CountryDetails() {
         <span className="text-xl">&larr;</span> Back
       </Button>
 
-      <div className="mx-auto grid grid-cols-1 gap-8 py-12 md:max-w-[1440px] md:grid-cols-2 ">
+      <div className="mx-auto grid grid-cols-1 justify-items-start gap-8 py-12 md:max-w-[1440px] md:grid-cols-2">
         <div className="md:max-w-lg">
           <LazyLoadImage
             src={countryDetails.flag}
