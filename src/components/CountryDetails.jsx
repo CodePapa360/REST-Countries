@@ -3,6 +3,7 @@ import Button from "../ui/Button";
 import { useSelector } from "react-redux";
 
 function CountryDetails() {
+  scrollTo(0, 0);
   const countries = useSelector((state) => state.country.countries);
   const { countryId } = useParams();
   // console.log(country, countryId);
