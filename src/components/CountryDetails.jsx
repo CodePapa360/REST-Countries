@@ -31,9 +31,6 @@ function CountryDetails() {
     return <p>Loading...</p>;
   }
 
-  // const borders = countryDetails.borders;
-  // const name = borders.
-
   return (
     <div className="px-8 py-8 text-cmVeryVeryDarkBlue dark:text-cmWhite lg:px-16 lg:py-16">
       <Button to="/">
@@ -41,10 +38,12 @@ function CountryDetails() {
       </Button>
 
       <div className="mx-auto grid grid-cols-1 justify-items-start gap-8 py-12 md:max-w-[1440px] md:grid-cols-2">
-        <div className=" md:max-w-lg">
+        <div className="w-full md:max-w-lg">
           <LazyLoadImage
             src={countryDetails.flag}
             alt={countryDetails.name}
+            height="100%"
+            width="100%"
             effect="blur"
             className="shadow-[0_0_15px_#00000033]"
           />
