@@ -49,8 +49,13 @@ export const getFilteredCountries = (state) => {
   // if (!countries.length) return [];
 
   const filterFunction = (country) => {
-    if (query && !country.name.toLowerCase().includes(query.toLowerCase())) {
-      return false;
+    if (query) {
+      const check =
+        country.name.toLowerCase().includes(query.toLowerCase()) ||
+        country.alpha2Code.toLowerCase().includes(query.toLowerCase()) ||
+        country.alpha3Code.toLowerCase().includes(query.toLowerCase());
+
+      if (!check) return false;
     }
     if (filter === "All" || country.region === filter) {
       return true;
