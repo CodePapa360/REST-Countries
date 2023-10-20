@@ -33,7 +33,7 @@ function CountryDetails() {
 
   return (
     <div className="px-8 py-8 text-cmVeryVeryDarkBlue dark:text-cmWhite lg:px-16 lg:py-16">
-      <Button to="/">
+      <Button extraClass="px-8" to="/">
         <span className="text-xl">&larr;</span> Back
       </Button>
 
