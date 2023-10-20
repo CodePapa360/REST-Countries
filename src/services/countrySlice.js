@@ -30,7 +30,7 @@ const countrySlice = createSlice({
   },
   extraReducers: (builder) =>
     builder
-      .addCase(fetchCountries.pending, (state, action) => {
+      .addCase(fetchCountries.pending, (state) => {
         state.status = "loading";
       })
       .addCase(fetchCountries.fulfilled, (state, action) => {

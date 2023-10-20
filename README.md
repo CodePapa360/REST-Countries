@@ -2,7 +2,7 @@
 
 <h2 align="center">
 
-[🌐WebSite](https://rest-countries-api-codepapa.vercel.app)
+[🌐WebSite](https://rest-countries-codepapa.vercel.app)
 
 </h2>
 
@@ -26,7 +26,7 @@
 </p>
 
 <!-- Screenshot -->
-<a align="center" href="https://rest-countries-api-codepapa.vercel.app">
+<a align="center" href="https://rest-countries-codepapa.vercel.app">
 
 ![Screenshot](./public/thumbnail-preview.png)
 
@@ -57,7 +57,7 @@ Users should be able to:
 - Clone this repo:
 
 ```sh
-git clone https://github.com/CodePapa360/REST-Countries-API.git
+git clone https://github.com/CodePapa360/REST-Countries.git
 ```
 
 - Install dependencies:
