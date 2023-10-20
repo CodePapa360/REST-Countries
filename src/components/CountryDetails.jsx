@@ -59,7 +59,7 @@ function CountryDetails() {
               </p>
               <p>
                 <span className="font-[600]">Population:</span>{" "}
-                {countryDetails.population}
+                {new Intl.NumberFormat().format(countryDetails.population)}
               </p>
               <p>
                 <span className="font-[600]">Region:</span>{" "}

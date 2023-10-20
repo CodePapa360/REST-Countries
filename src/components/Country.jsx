@@ -21,7 +21,8 @@ function Country({ country }) {
         <div className="p-4">
           <h2 className="mb-4 text-lg font-[800]">{country.name}</h2>
           <p>
-            <span className="font-[600]">Population:</span> {country.population}
+            <span className="font-[600]">Population:</span>{" "}
+            {new Intl.NumberFormat().format(country.population)}
           </p>
           <p>
             <span className="font-[600]">Region:</span> {country.region}
