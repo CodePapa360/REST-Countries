@@ -31,6 +31,9 @@ function CountryDetails() {
     return <p>Loading...</p>;
   }
 
+  // const borders = countryDetails.borders;
+  // const name = borders.
+
   return (
     <div className="px-8 py-8 text-cmVeryVeryDarkBlue dark:text-cmWhite lg:px-16 lg:py-16">
       <Button to="/">
@@ -90,26 +93,40 @@ function CountryDetails() {
                 <span className="font-[600]">Languages:</span>{" "}
                 {countryDetails.languages.map((lng) => lng.name).join(", ")}
               </p>
+              <p>
+                <span className="font-[600]">Independent:</span>{" "}
+                {countryDetails.independent ? "Yes" : "No"}
+              </p>
             </div>
           </div>
 
           {countryDetails.borders && (
-            <div className="flex flex-col gap-4 lg:flex-row">
-              <h2 className="whitespace-nowrap text-lg font-[600]">
-                Border Countries:
-              </h2>
+            <div className="flex flex-col gap-4">
+              <h2 className="text-lg font-[600]">Border Countries:</h2>
               <ul className="flex flex-wrap gap-4">
-                {/* Temporary */}
-                {countryDetails.borders.map((br) => (
-                  <li key={br}>
-                    <Button to={`/country/${br}`}>
-                      {
-                        countries.find((country) => country.alpha3Code === br)
-                          .name
-                      }
-                    </Button>
-                  </li>
-                ))}
+                {countryDetails.borders.map((border) => {
+                  const borderCountry = countries.find(
+                    (country) => country.alpha3Code === border,
+                  );
+
+                  const { name, flags } = borderCountry;
+
+                  return (
+                    <li key={border}>
+                      <Button extraClass="px-2" to={`/country/${border}`}>
+                        <span className="flex items-center gap-2">
+                          <img
+                            src={flags.svg}
+                            alt={name}
+                            width="24"
+                            height="16"
+                          />
+                          <span>{name}</span>
+                        </span>
+                      </Button>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           )}
