@@ -2,7 +2,7 @@
 
 <h2 align="center">
 
-[🌐WebSite](https://rest-countries-codepapa.vercel.app)
+[🌐WebSite](https://rest-countries-codepapa.vercel.app) || [Solution]()
 
 </h2>
 
@@ -22,7 +22,7 @@
 
 <!-- Brief -->
 <p align="center">
-
+This project is a practical exploration of React, React Router, and Redux Toolkit. It's a dynamic web application that allows users to explore and learn about countries from around the world. It's been a journey of challenges, learning, and growth, with a focus on improving my development skills and problem-solving abilities.
 </p>
 
 <!-- Screenshot -->
@@ -47,10 +47,21 @@ Users should be able to:
 
 - [React](https://reactjs.org) - A JavaScript library for building user interfaces
 - [Redux Toolkit](https://redux-toolkit.js.org) - A simplified, efficient, and powerful Redux library for building state management systems
+- [Redux Router](https://reactrouter.com/en/main) - Declarative routing for React applications
 - [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS framework for building any design
 - HTML5
 - Mobile-first workflow
 - [Vite](https://vitejs.dev/) - A JavaScript module bundler and development server.
+
+## What I Learned
+
+Throughout this project, I encountered some interesting challenges while learning React, React Router, and Redux Toolkit.
+
+- **Embracing Challenges:** I faced some tricky issues while working on the project, like handling complex state and integrating data. These challenges, while tough, were the moments when I learned the most.
+
+- **Becoming a Detective:** Debugging became my new superpower. I spent a lot of time hunting down bugs and troubleshooting issues. It was frustrating at times, but it made me better at fixing things.
+
+- **The Importance of Planning:** I discovered that having a plan and an organized structure for my project can save a lot of time and reduce stress.
 
 ## Installation
 
@@ -91,7 +102,7 @@ Feel free to contact me with any questions or feedback!
 
 ## Acknowledgments
 
-This project was inspired by the "Todo App" challenge from Frontend Mentor. Special thanks to Frontend Mentor for providing the design and specifications for this project.
+The project was inspired by this challenge from Frontend Mentor. Special thanks to Frontend Mentor for providing the design and specifications for this project.
 
 ## License
 
