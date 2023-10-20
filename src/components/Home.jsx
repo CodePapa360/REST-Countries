@@ -4,6 +4,7 @@ import { fetchCountries, getFilteredCountries } from "../services/countrySlice";
 import Search from "./Search";
 import Filter from "./Filter";
 import { useEffect, useState } from "react";
+import Loader from "../ui/Loader";
 
 function Home() {
   const state = useSelector((state) => state.country);
@@ -27,6 +28,9 @@ function Home() {
 
     setEnd(() => newEnd);
   }
+
+  const isLoading = useSelector((state) => state.country.status !== "idle");
+  if (isLoading) return <Loader />;
 
   return (
     <>

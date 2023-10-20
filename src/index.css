@@ -18,42 +18,38 @@
     object-fit: cover;
   }
 
-  .loader {
-    width: 45px;
-    aspect-ratio: 0.75;
-    --c: no-repeat linear-gradient(theme(colors.slate.300) 0 0);
-    background:
-      var(--c) 0% 50%,
-      var(--c) 50% 50%,
-      var(--c) 100% 50%;
-    background-size: 20% 50%;
-    animation: loading 0.5s infinite linear;
+  .pulse-container {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  @keyframes loading {
-    20% {
-      background-position:
-        0% 0%,
-        50% 50%,
-        100% 50%;
+  .pulse-bubble {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #00ffff;
+  }
+
+  .pulse-bubble-1 {
+    animation: pulse 0.4s ease 0s infinite alternate;
+  }
+  .pulse-bubble-2 {
+    animation: pulse 0.4s ease 0.2s infinite alternate;
+  }
+  .pulse-bubble-3 {
+    animation: pulse 0.4s ease 0.4s infinite alternate;
+  }
+
+  @keyframes pulse {
+    from {
+      opacity: 1;
+      transform: scale(1);
     }
-    40% {
-      background-position:
-        0% 100%,
-        50% 0%,
-        100% 50%;
-    }
-    60% {
-      background-position:
-        0% 50%,
-        50% 100%,
-        100% 0%;
-    }
-    80% {
-      background-position:
-        0% 50%,
-        50% 50%,
-        100% 100%;
+    to {
+      opacity: 0.25;
+      transform: scale(0.75);
     }
   }
 }
