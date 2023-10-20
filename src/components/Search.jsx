@@ -14,7 +14,7 @@ function Search() {
   }
 
   return (
-    <div className="flex w-full items-center rounded-md bg-cmWhite text-cmVeryVeryDarkBlue shadow-[0_0_15px_#00000033] focus-within:outline-dotted focus-within:outline-offset-2 focus-within:outline-gray-500 dark:bg-cmDarkBlue dark:text-cmWhite md:max-w-md">
+    <div className="flex w-full items-center rounded-md bg-cmWhite text-cmVeryVeryDarkBlue shadow-[0_0_15px_#00000033] focus-within:outline-dotted focus-within:outline-offset-2 focus-within:outline-slate-400 dark:bg-cmDarkBlue dark:text-cmWhite md:max-w-md">
       <label htmlFor="search" className="px-6 text-cmDarkGray">
         <svg
           xmlns="http://www.w3.org/2000/svg"
