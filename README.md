@@ -2,11 +2,15 @@
 
 <h2 align="center">
 
-[🌐Live WebSite](https://rest-countries-codepapa.vercel.app)
-<br/>
-[Solution]()
+[🌐WebSite URL](https://rest-countries-codepapa.vercel.app)
 
 </h2>
+
+<h3 align="center">
+
+[Solution URL]()
+
+</h3>
 
 <!-- Badges -->
 <div align="center">
