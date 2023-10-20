@@ -14,6 +14,7 @@ function AppLayout() {
       <Header />
 
       <main className="grow bg-cmVeryLightGray pb-4 dark:bg-cmVeryDarkBlue">
+        <h1 className="hidden">REST Countries API with color theme switcher</h1>
         <Outlet />
       </main>
 

@@ -13,6 +13,7 @@ function Filter() {
 
   return (
     <select
+      name="Select Region"
       className=" w-52 cursor-pointer rounded-md bg-cmWhite p-4 text-cmVeryVeryDarkBlue shadow-[0_0_15px_#00000033]  dark:bg-cmDarkBlue dark:text-cmWhite"
       value={filter}
       onChange={handleFilter}
