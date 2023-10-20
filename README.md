@@ -2,7 +2,9 @@
 
 <h2 align="center">
 
-[🌐WebSite](https://rest-countries-codepapa.vercel.app) || [Solution]()
+[🌐Live WebSite](https://rest-countries-codepapa.vercel.app)
+<br/>
+[Solution]()
 
 </h2>
 
