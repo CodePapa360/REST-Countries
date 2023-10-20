@@ -6,7 +6,7 @@ function Error() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-cmWhite text-cmVeryVeryDarkBlue dark:bg-cmVeryDarkBlue dark:text-cmWhite">
       <h1>Something went wrong 😢</h1>
       <p>{error.data || error.message}</p>
 

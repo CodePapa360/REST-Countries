@@ -6,6 +6,7 @@ import Loader from "../ui/Loader";
 
 function AppLayout() {
   const isLoading = useSelector((state) => state.country.status !== "idle");
+
   return (
     <div className="mx-auto flex min-h-screen flex-col">
       {isLoading && <Loader />}
