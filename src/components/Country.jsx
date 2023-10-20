@@ -10,11 +10,8 @@ function Country({ country }) {
         to={`/country/${country.alpha3Code}`}
         className="inline-block w-full max-w-[18rem] overflow-hidden rounded-md bg-cmWhite text-cmVeryVeryDarkBlue shadow-[0_0_15px_#00000033] transition-transform hover:scale-105 dark:bg-cmDarkBlue dark:text-cmWhite"
       >
-        <div className="h-40 w-full">
+        <div className="lazyLoadHomeFlags h-40 w-full">
           <LazyLoadImage
-            height={"100%"}
-            width={"100%"}
-            className="lazyLoadHomeFlags"
             alt={country.name}
             effect="blur"
             src={country.flags.svg}

@@ -10,15 +10,12 @@
     outline-width: 3px;
   }
 
-  .lazyLoadHomeFlags {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-
+  .lazyLoadHomeFlags span,
+  .lazyLoadHomeFlags span img,
   .lazyLoadDetailFlags span {
     height: 100%;
     width: 100%;
+    object-fit: cover;
   }
 
   .loader {
