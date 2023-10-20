@@ -38,12 +38,10 @@ function CountryDetails() {
       </Button>
 
       <div className="mx-auto grid grid-cols-1 justify-items-start gap-8 py-12 md:max-w-[1440px] md:grid-cols-2">
-        <div className="w-full md:max-w-lg">
+        <div className="lazyLoadDetailFlags w-full md:max-w-lg">
           <LazyLoadImage
             src={countryDetails.flag}
             alt={countryDetails.name}
-            height="100%"
-            width="100%"
             effect="blur"
             className="shadow-[0_0_15px_#00000033]"
           />

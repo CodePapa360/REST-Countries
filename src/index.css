@@ -16,6 +16,11 @@
     object-fit: cover;
   }
 
+  .lazyLoadDetailFlags span {
+    height: 100%;
+    width: 100%;
+  }
+
   .loader {
     width: 45px;
     aspect-ratio: 0.75;
