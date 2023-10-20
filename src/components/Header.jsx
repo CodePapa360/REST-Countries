@@ -15,7 +15,7 @@ function Header() {
   }
 
   return (
-    <header className="flex items-center justify-between bg-cmWhite px-4 py-8 text-cmVeryVeryDarkBlue shadow-lg dark:bg-cmDarkBlue dark:text-cmWhite">
+    <header className="z-10 flex items-center justify-between bg-cmWhite px-4 py-8 text-cmVeryVeryDarkBlue shadow-[0_5px_5px_#00000033] dark:bg-cmDarkBlue dark:text-cmWhite">
       <Link to={"/"} className="font-[800]   md:text-2xl">
         Where in the world?
       </Link>

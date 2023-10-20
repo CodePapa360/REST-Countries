@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 @layer components {
-  .testClass {
-    /* box-shadow: 0 0 15px #00000033; */
-    /* color: ; */
+  *:focus {
+    outline: dotted;
+    outline-offset: 2px;
+    outline-color: gray;
+    outline-width: 3px;
   }
 
   .lazyLoadHomeFlags {
