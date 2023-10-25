@@ -46,18 +46,25 @@ const countrySlice = createSlice({
 export const getFilteredCountries = (state) => {
   const { countries, filter, query } = state;
 
-  // if (!countries.length) return [];
+  const cleanQuery = query.trim().toLowerCase();
 
   const filterFunction = (country) => {
+    const details = {
+      name: country.name.common,
+      alpha3Code: country.cca3,
+      alpha2Code: country.cca2,
+      region: country.region,
+    };
+
     if (query) {
       const check =
-        country.name.toLowerCase().includes(query.toLowerCase()) ||
-        country.alpha2Code.toLowerCase().includes(query.toLowerCase()) ||
-        country.alpha3Code.toLowerCase().includes(query.toLowerCase());
+        details.name.toLowerCase().includes(cleanQuery) ||
+        details.alpha2Code.toLowerCase().includes(cleanQuery) ||
+        details.alpha3Code.toLowerCase().includes(cleanQuery);
 
       if (!check) return false;
     }
-    if (filter === "All" || country.region === filter) {
+    if (filter === "All" || details.region === filter) {
       return true;
     }
     return false;

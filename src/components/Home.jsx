@@ -6,6 +6,8 @@ import Filter from "./Filter";
 import { useEffect, useState } from "react";
 import Loader from "../ui/Loader";
 
+import jsonFile from "../assets/data.json";
+
 function Home() {
   const state = useSelector((state) => state.country);
   const dispatch = useDispatch();
@@ -32,6 +34,8 @@ function Home() {
   const isLoading = useSelector((state) => state.country.status !== "idle");
   if (isLoading) return <Loader />;
 
+  // console.log(jsonFile.find((country) => !country.currencies));
+
   return (
     <>
       <div className="flex flex-col justify-between gap-4 p-4 md:flex-row md:p-8 lg:mx-auto lg:max-w-[1440px]">
@@ -42,7 +46,7 @@ function Home() {
       {countries.length ? (
         <ul className="grid grid-cols-[repeat(auto-fill,_minmax(auto,_18rem))] items-center justify-center gap-8 p-4 md:gap-16 lg:mx-auto lg:max-w-[1440px]">
           {countries.map((country) => (
-            <Country country={country} key={country.name} />
+            <Country country={country} key={country.cca3} />
           ))}
         </ul>
       ) : (
