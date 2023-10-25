@@ -40,7 +40,7 @@ function CountryDetails() {
       <div className="mx-auto grid grid-cols-1 justify-items-start gap-8 py-12 md:max-w-[1440px] md:grid-cols-2">
         <div className="lazyLoadDetailFlags w-full md:max-w-lg">
           <LazyLoadImage
-            src={countryDetails.flag}
+            src={countryDetails.flags.svg}
             alt={countryDetails.name}
             effect="blur"
             className="shadow-[0_0_15px_#00000033]"
