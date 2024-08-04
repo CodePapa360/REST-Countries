@@ -47,7 +47,7 @@ Users should be able to:
 
 - [React](https://reactjs.org) - A JavaScript library for building user interfaces
 - [Redux Toolkit](https://redux-toolkit.js.org) - A simplified, efficient, and powerful Redux library for building state management systems
-- [Redux Router](https://reactrouter.com/en/main) - Declarative routing for React applications
+- [React Router](https://reactrouter.com/en/main) - Declarative routing for React applications
 - [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS framework for building any design
 - HTML5
 - Mobile-first workflow
